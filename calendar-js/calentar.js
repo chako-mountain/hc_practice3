@@ -33,9 +33,7 @@ function create_calendar(begin_day,how_many_day) {
             else{
                 process.stdout.write(" ".repeat(2) + i);
                 week_day_administrator += 1
-
-            }
-            
+            }   
         }
         else {
 
