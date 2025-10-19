@@ -4,12 +4,7 @@ import (
 	"fmt"
 )
 
-// import "fmt"
-
 func findKeyByValue(m map[int]string, targetValue string) (int, error) {
-	// int_key = strconv.Atoi.map_key
-	// return m[map_key]
-
 	for key, value := range m {
 		if value == targetValue {
 			return key, nil
