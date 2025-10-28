@@ -3,17 +3,25 @@
 
 function renderCalendar(firstWeekday,daysInMonth) {
 
-    week_day_administrator = firstWeekday + 1 
+    // week_day_administrator = firstWeekday + 1 
 
     const initialSpaces = 1 + firstWeekday*3
 
     console.log("日 月 火 水 木 金 土")
     process.stdout.write(" ".repeat(initialSpaces) + "1");
+    firstWeekday += 1;
 
-    if (week_day_administrator === 7) {
+    // if (week_day_administrator === 7) {
+    //     console.log()
+    //     week_day_administrator = 0;
+    // }
+
+    if (firstWeekday === 6) {
         console.log()
-        week_day_administrator = 0;
+        firstWeekday = 0;
     }
+
+
 
     for (i= 2 ; i <= daysInMonth; i++){
         // if (i >= 0 && i < 10) {
@@ -66,21 +74,40 @@ function renderCalendar(firstWeekday,daysInMonth) {
 
 
 
-        if (week_day_administrator === 6) {
-            week_day_administrator = 0
+        // if (week_day_administrator === 6) {
+        //     week_day_administrator = 0
+        //     // process.stdout.write(" ".repeat(1) + i);
+        //     process.stdout.write(String(i).padStart(3));
+        //     console.log()
+        // }
+        // else if(week_day_administrator === 0) {
+        //     // process.stdout.write(" ".repeat() + i);
+        //     process.stdout.write(String(i).padStart(2));
+        //     week_day_administrator += 1
+        // }
+        // else{
+        //     // process.stdout.write(" ".repeat(1) + i);
+        //     process.stdout.write(String(i).padStart(3));
+        //     week_day_administrator += 1
+
+        // }
+
+
+        if (firstWeekday === 6) {
+            firstWeekday = 0
             // process.stdout.write(" ".repeat(1) + i);
             process.stdout.write(String(i).padStart(3));
             console.log()
         }
-        else if(week_day_administrator === 0) {
+        else if(firstWeekday === 0) {
             // process.stdout.write(" ".repeat() + i);
             process.stdout.write(String(i).padStart(2));
-            week_day_administrator += 1
+            firstWeekday += 1
         }
         else{
             // process.stdout.write(" ".repeat(1) + i);
             process.stdout.write(String(i).padStart(3));
-            week_day_administrator += 1
+            firstWeekday += 1
 
         }
 
